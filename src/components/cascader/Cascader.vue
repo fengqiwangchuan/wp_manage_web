@@ -1,6 +1,6 @@
 <template>
   <cas :data="options" @on-change="handleChange" :loadData="loadOption" transfer>
-    <v-select :label="label" chips clearable v-model="selected" tags :required="required"
+    <v-combobox multiple :label="label" chips clearable v-model="selected" tags :required="required"
       :rules="defaultRules">
       <template slot="selection" slot-scope="data">
         <v-chip @click.stop="" v-if="multiple" close @input="remove(data.item)" small outline color="green">
@@ -8,7 +8,7 @@
         </v-chip>
         <v-chip @click.stop="" v-else small>{{ data.item}}</v-chip>
       </template>
-    </v-select>
+    </v-combobox>
   </cas>
 </template>
 
