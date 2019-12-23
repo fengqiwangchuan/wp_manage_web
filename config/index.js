@@ -11,11 +11,18 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api/*': {
+      '/api/upload': {
+        target: 'http://127.0.0.1:8082',
+        secure: false,
+        changeOrigin: true,
+        pathRewrite: {'^/api': ''}
+      },
+      '/api/item/*': {
         target: 'http://127.0.0.1:10010',
         secure: false,
         changeOrigin: true
-      }
+      },
+
     },
 
     // Various Dev Server settings
